@@ -1,23 +1,20 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jericho Mordasiewicz - Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <style>
         :root {
-            --primary-color: #2d3436;
-            --accent-color: #0984e3;
-            --text-color: #2d3436;
-            --background-color: #f5f6fa;
-            --gradient: linear-gradient(135deg, #0984e3, #00cec9);
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --text-color: #333;
+            --background-color: #ecf0f1;
         }
 
         body {
-            font-family: 'Segoe UI', system-ui, sans-serif;
-            line-height: 1.8;
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
             margin: 0;
             padding: 0;
             background-color: var(--background-color);
@@ -25,128 +22,88 @@
         }
 
         header {
-            background: var(--gradient);
+            background-color: var(--primary-color);
             color: white;
             text-align: center;
-            padding: 4rem 0;
-            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-            margin-bottom: 2rem;
-        }
-
-        header h1 {
-            font-size: 3rem;
-            margin: 0;
-            animation: fadeInDown 1s;
-        }
-
-        header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            animation: fadeInUp 1s;
+            padding: 2rem 0;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 2rem;
         }
 
         section {
             margin-bottom: 3rem;
             padding: 2rem;
             background-color: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease;
-        }
-
-        section:hover {
-            transform: translateY(-5px);
-        }
-
-        h2 {
-            color: var(--primary-color);
-            border-bottom: 3px solid var(--accent-color);
-            display: inline-block;
-            padding-bottom: 0.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
         .contact-info a {
             color: var(--accent-color);
             text-decoration: none;
-            transition: color 0.3s ease;
-            font-weight: 500;
         }
 
         .contact-info a:hover {
-            color: #0052cc;
+            text-decoration: underline;
         }
 
         .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            display: flex;
+            flex-direction: column;
             gap: 2rem;
         }
 
         .project-card {
-            padding: 1.5rem;
+            padding: 2rem;
             border: none;
-            border-radius: 12px;
+            border-radius: 15px;
             background: white;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
+            transform: translateX(-50px);
+            opacity: 0;
+            animation: slideIn 0.5s ease forwards;
+        }
+
+        .project-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .project-card:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes slideIn {
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
         }
 
         .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-        }
-
-        .project-card h3 {
-            color: var(--primary-color);
-            margin-top: 0;
-            font-size: 1.5rem;
-        }
-
-        .project-link {
-            display: inline-block;
-            margin-top: 1rem;
-            color: var(--accent-color);
-            text-decoration: none;
-            font-weight: 500;
-            transition: transform 0.3s ease;
-        }
-
-        .project-link:hover {
-            transform: translateX(5px);
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .about, .projects, .contact-info {
-            animation: fadeInUp 1s;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
         }
     </style>
 </head>
 <body>
     <header>
         <h1>Jericho Mordasiewicz</h1>
-        <p>Software Developer</p>
+        <p>Nanotechnology Engineering Student</p>
+        <p>University of Waterloo</p>
     </header>
 
     <div class="container">
         <section class="about">
             <h2>About Me</h2>
-            <p>Hello! I'm Jericho Mordasiewicz, a passionate software developer with expertise in web development and software engineering. I enjoy creating efficient, scalable solutions and learning new technologies.</p>
+            <p>As a Nanotechnology Engineering student at the University of Waterloo, I specialize in developing innovative solutions 
+            at the intersection of materials science and engineering. My passion lies in creating efficient, sustainable technologies 
+            that push the boundaries of what's possible in semiconductor and electronics manufacturing. With a strong foundation in 
+            both theoretical and practical applications, I bring a unique perspective to solving complex engineering challenges.</p>
         </section>
 
         <section class="projects">
