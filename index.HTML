@@ -13,13 +13,13 @@
             --accent-gradient: linear-gradient(135deg, #ffd700, #daa520);
             --text-color: #ffffff;
             --section-bg: rgba(45, 45, 45, 0.7);
+            --background-color: #2c003e;  /* Dark purple background */
         }
 
         body {
-            background: #121212;
+            background: var(--background-color);
             position: relative;
             overflow-x: hidden;
-            background: linear-gradient(45deg, #121212, #2d2d2d), var(--bg-pattern);
             font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
             line-height: 1.6;
             margin: 0;
@@ -27,13 +27,14 @@
             color: var(--text-color);
         }
 
-        /* Bubble background */
+        /* Updated Bubble styles */
         .bubbles {
             position: fixed;
             width: 100%;
             height: 100%;
-            z-index: -1;
+            z-index: 0;  /* Changed from -1 to be visible */
             overflow: hidden;
+            pointer-events: none;  /* Allows clicking through bubbles */
         }
 
         .bubble {
@@ -43,36 +44,38 @@
             height: 40px;
             background: rgba(255, 215, 0, 0.1);
             border-radius: 50%;
-            opacity: 0.5;
+            opacity: 0.3;
             animation: rise 15s infinite ease-in;
-        }
-
-        .bubble:nth-child(2n) {
-            width: 20px;
-            height: 20px;
-            animation-duration: 20s;
-            animation-delay: 2s;
-        }
-
-        .bubble:nth-child(3n) {
-            width: 60px;
-            height: 60px;
-            animation-duration: 25s;
-            animation-delay: 4s;
+            border: 1px solid rgba(255, 215, 0, 0.2);  /* Added border for visibility */
         }
 
         @keyframes rise {
             0% {
-                bottom: -100px;
-                transform: translateX(0);
+                transform: translateY(0) translateX(0) scale(1);
+                opacity: 0.3;
             }
             50% {
-                transform: translateX(100px);
+                transform: translateY(-50vh) translateX(100px) scale(1.2);
+                opacity: 0.5;
             }
             100% {
-                bottom: 100vh;
-                transform: translateX(-200px);
+                transform: translateY(-100vh) translateX(-100px) scale(0.8);
+                opacity: 0;
             }
+        }
+
+        /* Update section and container z-index */
+        .container {
+            position: relative;
+            z-index: 1;  /* Ensure content stays above bubbles */
+        }
+
+        section {
+            background: var(--section-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);  /* For Safari support */
+            position: relative;
+            z-index: 2;  /* Ensure sections stay above bubbles */
         }
 
         header {
@@ -93,26 +96,6 @@
             background: var(--accent-gradient);
             clip-path: polygon(100% 0, 0% 100%, 100% 100%);
             opacity: 0.3;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        section {
-            margin-bottom: 3rem;
-            padding: 2rem;
-            background: var(--section-bg);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            transition: transform 0.3s ease;
-        }
-
-        section:hover {
-            transform: translateY(-5px);
         }
 
         .about p {
@@ -273,7 +256,6 @@
 </body>
 
 <script>
-    // Add this script to dynamically create bubbles
     document.addEventListener('DOMContentLoaded', () => {
         const bubblesContainer = document.querySelector('.bubbles');
         
@@ -281,19 +263,26 @@
             const bubble = document.createElement('div');
             bubble.className = 'bubble';
             bubble.style.left = `${Math.random() * 100}%`;
-
-            // Remove bubble after animation
+            bubble.style.animationDuration = `${15 + Math.random() * 10}s`;
+            bubble.style.opacity = `${0.1 + Math.random() * 0.3}`;
+            bubble.style.width = `${20 + Math.random() * 40}px`;
+            bubble.style.height = bubble.style.width;
+            
+            bubblesContainer.appendChild(bubble);
+            
             bubble.addEventListener('animationend', () => {
                 bubble.remove();
+                createBubble();  // Create a new bubble when one ends
             });
-
-            // Create initial bubbles
-            bubblesContainer.appendChild(bubble);
         }
 
-        for (let i = 0; i < 20; i++) {
-            setTimeout(() => createBubble(), i * 500);
+        // Create initial bubbles
+        for (let i = 0; i < 15; i++) {
+            setTimeout(() => createBubble(), i * 300);
         }
+
+        // Continue creating bubbles periodically
+        setInterval(createBubble, 2000);
     });
 </script>
 </html>
