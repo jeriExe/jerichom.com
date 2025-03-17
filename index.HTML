@@ -1,104 +1,66 @@
+index.html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Engineering Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Jericho Mordasiewicz - Portfolio</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --text-color: #333;
+            --background-color: #ecf0f1;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .contact-info {
+            margin-top: 2rem;
+        }
+
+        .contact-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="logo">Your Name</div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+    <header>
+        <h1>Jericho Mordasiewicz</h1>
+        <p>Software Developer</p>
+    </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h1>Hi, I'm <span class="highlight">Your Name</span></h1>
-            <p>Engineering Professional | Project Developer</p>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <h2>My Projects</h2>
-        <div class="project-grid">
-            <!-- Project 1 -->
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="images/project1.jpg" alt="Project 1">
-                </div>
-                <div class="project-info">
-                    <h3>Project Title 1</h3>
-                    <p>Project description goes here. Explain what technologies you used and your role.</p>
-                    <div class="project-links">
-                        <a href="#" class="btn">View Project</a>
-                        <a href="#" class="btn">GitHub</a>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Project 2 (with GIF) -->
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="images/project2.gif" alt="Project 2">
-                </div>
-                <div class="project-info">
-                    <h3>Project Title 2</h3>
-                    <p>This project uses a GIF to demonstrate functionality.</p>
-                    <div class="project-links">
-                        <a href="#" class="btn">View Project</a>
-                        <a href="#" class="btn">GitHub</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <h2>About Me</h2>
-        <div class="about-content">
-            <div class="about-image">
-                <img src="images/profile.jpg" alt="Your Name">
-            </div>
-            <div class="about-text">
-                <p>Write a brief bio about yourself, your skills, and your experience.</p>
-                <div class="skills">
-                    <h3>Skills</h3>
-                    <ul>
-                        <li>Skill 1</li>
-                        <li>Skill 2</li>
-                        <li>Skill 3</li>
-                        <li>Skill 4</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <h2>Get In Touch</h2>
-        <div class="contact-info">
-            <p>Email: your.email@example.com</p>
-            <p>LinkedIn: linkedin.com/in/yourprofile</p>
-            <p>GitHub: github.com/yourusername</p>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 Your Name. All rights reserved.</p>
-    </footer>
-
-    <script src="script.js"></script>
+    <div class="container">
+        <section class="contact-info">
+            <h2>Contact Information</h2>
+            <p>Email: <a href="mailto:Jericho@Mordasiewicz.com">Jericho@Mordasiewicz.com</a></p>
+            <p>LinkedIn: <a href="https://linkedin.com/in/jericho-mordasiewicz" target="_blank">linkedin.com/in/jericho-mordasiewicz</a></p>
+        </section>
+    </div>
 </body>
 </html>
