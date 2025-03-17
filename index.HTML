@@ -1,4 +1,4 @@
-index.html
+\index.html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,8 +35,12 @@ index.html
             padding: 2rem;
         }
 
-        .contact-info {
-            margin-top: 2rem;
+        section {
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
         .contact-info a {
@@ -47,6 +51,23 @@ index.html
         .contact-info a:hover {
             text-decoration: underline;
         }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            padding: 1.5rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        .project-card h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+        }
     </style>
 </head>
 <body>
@@ -56,6 +77,32 @@ index.html
     </header>
 
     <div class="container">
+        <section class="about">
+            <h2>About Me</h2>
+            <p>Hello! I'm Jericho Mordasiewicz, a passionate software developer with expertise in web development and software engineering. I enjoy creating efficient, scalable solutions and learning new technologies.</p>
+        </section>
+
+        <section class="projects">
+            <h2>Projects</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>Project 1</h3>
+                    <p>Description of your first project. What technologies did you use? What problems did you solve?</p>
+                    <a href="#" class="project-link">View Project →</a>
+                </div>
+                <div class="project-card">
+                    <h3>Project 2</h3>
+                    <p>Description of your second project. What technologies did you use? What problems did you solve?</p>
+                    <a href="#" class="project-link">View Project →</a>
+                </div>
+                <div class="project-card">
+                    <h3>Project 3</h3>
+                    <p>Description of your third project. What technologies did you use? What problems did you solve?</p>
+                    <a href="#" class="project-link">View Project →</a>
+                </div>
+            </div>
+        </section>
+
         <section class="contact-info">
             <h2>Contact Information</h2>
             <p>Email: <a href="mailto:Jericho@Mordasiewicz.com">Jericho@Mordasiewicz.com</a></p>
