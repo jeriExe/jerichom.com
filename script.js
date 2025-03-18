@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
         card.style.transform = 'translateX(-50px)';
         card.style.transition = 'all 0.6s ease';
         card.style.transitionDelay = `${index * 0.2}s`;
-        card.classList.add('geometric-pattern'); // Add geometric pattern class
         observer.observe(card);
         
         // 3D hover effect
