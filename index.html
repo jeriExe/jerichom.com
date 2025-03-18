@@ -161,6 +161,26 @@
             color: #daa520;
             text-decoration: underline;
         }
+
+        .project-content ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0 0 1.5rem 0;
+        }
+
+        .project-content li {
+            position: relative;
+            padding-left: 1.5em;
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+
+        .project-content li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #ffd700;
+        }
     </style>
 </head>
 <body>
@@ -188,10 +208,11 @@
                     <img src="https://picsum.photos/400/300?random=1" alt="Project 1" class="project-image">
                     <div class="project-content">
                         <h3>(Semi)conductive ink synthesis and R&D for additive manufacturing</h3>
-                        <p> •	Synthesized silver nanoparticles for use in flexible PCBs with an application to wearable electronics\n
-                            •	Tested ink conductivity, adhesion, and ductility with various substrates and sintering temperatures\n
-                            •	Collaborated through goal alignment and technical documentation including SOPs and BOMs
-                            </p>
+                        <ul>
+                            <li>Synthesized silver nanoparticles for use in flexible PCBs with an application to wearable electronics</li>
+                            <li>Tested ink conductivity, adhesion, and ductility with various substrates and sintering temperatures</li>
+                            <li>Collaborated through goal alignment and technical documentation including SOPs and BOMs</li>
+                        </ul>
                         <a href="#" class="project-link">View Project →</a>
                     </div>
                 </div>
@@ -199,10 +220,11 @@
                     <img src="https://picsum.photos/400/300?random=2" alt="Project 2" class="project-image">
                     <div class="project-content">
                         <h3>Photocatalytic cell manufacturing and potentiostatic analysis</h3>
-                        <p> •   Fabricated photocatalytic cells to be applied to solar conversion and wastewater sensing\n
-                            •	Optimized deposition techniques for anode materials with Python & data analysis principles\n
-                            •	Ensured feasibility of research-oriented process design for industrial use and scalability
-                            </p>
+                        <ul>
+                            <li>Fabricated photocatalytic cells to be applied to solar conversion and wastewater sensing</li>
+                            <li>Optimized deposition techniques for anode materials with Python & data analysis principles</li>
+                            <li>Ensured feasibility of research-oriented process design for industrial use and scalability</li>
+                        </ul>
                         <a href="#" class="project-link">View Project →</a>
                     </div>
                 </div>
