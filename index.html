@@ -27,47 +27,10 @@
             color: var(--text-color);
         }
 
-        /* Updated Bubble styles */
-        .bubbles {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            z-index: 0;  /* Changed from -1 to be visible */
-            overflow: hidden;
-            pointer-events: none;  /* Allows clicking through bubbles */
-        }
-
-        .bubble {
-            position: absolute;
-            bottom: -100px;
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 215, 0, 0.1);
-            border-radius: 50%;
-            opacity: 0.3;
-            animation: rise 15s infinite ease-in;
-            border: 1px solid rgba(255, 215, 0, 0.2);  /* Added border for visibility */
-        }
-
-        @keyframes rise {
-            0% {
-                transform: translateY(0) translateX(0) scale(1);
-                opacity: 0.3;
-            }
-            50% {
-                transform: translateY(-50vh) translateX(100px) scale(1.2);
-                opacity: 0.5;
-            }
-            100% {
-                transform: translateY(-100vh) translateX(-100px) scale(0.8);
-                opacity: 0;
-            }
-        }
-
         /* Update section and container z-index */
         .container {
             position: relative;
-            z-index: 1;  /* Ensure content stays above bubbles */
+            /* remove z-index: 1; as it's no longer needed */
         }
 
         section {
@@ -75,7 +38,7 @@
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);  /* For Safari support */
             position: relative;
-            z-index: 2;  /* Ensure sections stay above bubbles */
+            /* remove z-index: 2; as it's no longer needed */
         }
 
         header {
@@ -193,19 +156,6 @@
         <p>University of Waterloo</p>
     </header>
 
-    <div class="bubbles">
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-    </div>
-
     <div class="container">
         <section class="about">
             <h2>About Me</h2>
@@ -254,35 +204,4 @@
         </section>
     </div>
 </body>
-
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const bubblesContainer = document.querySelector('.bubbles');
-        
-        function createBubble() {
-            const bubble = document.createElement('div');
-            bubble.className = 'bubble';
-            bubble.style.left = `${Math.random() * 100}%`;
-            bubble.style.animationDuration = `${15 + Math.random() * 10}s`;
-            bubble.style.opacity = `${0.1 + Math.random() * 0.3}`;
-            bubble.style.width = `${20 + Math.random() * 40}px`;
-            bubble.style.height = bubble.style.width;
-            
-            bubblesContainer.appendChild(bubble);
-            
-            bubble.addEventListener('animationend', () => {
-                bubble.remove();
-                createBubble();  // Create a new bubble when one ends
-            });
-        }
-
-        // Create initial bubbles
-        for (let i = 0; i < 15; i++) {
-            setTimeout(() => createBubble(), i * 300);
-        }
-
-        // Continue creating bubbles periodically
-        setInterval(createBubble, 2000);
-    });
-</script>
 </html>
