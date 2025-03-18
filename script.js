@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
         card.style.transform = 'translateX(-50px)';
         card.style.transition = 'all 0.6s ease';
         card.style.transitionDelay = `${index * 0.2}s`;
+        card.classList.add('geometric-pattern'); // Add geometric pattern class
         observer.observe(card);
         
         // 3D hover effect
@@ -33,11 +34,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const rotateX = (y - centerY) / 20;
             const rotateY = -(x - centerX) / 20;
             
-            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`; // Add scaling effect
         });
 
         card.addEventListener('mouseleave', () => {
-            card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
+            card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)'; // Reset scaling effect
         });
     });
 
