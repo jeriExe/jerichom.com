@@ -84,79 +84,79 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
-        }
-
-        .project-image {
+        }   transform: none;
+            opacity: 1;
+        .project-image {one;
             width: 100%;
             height: 200px;
             object-fit: cover;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             margin-bottom: 1rem;
-        }
-
-        .project-content h3 {
+        }   border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        .project-content h3 {em;
             color: #ffd700;
             font-size: 1.5rem;
             margin-bottom: 1rem;
-        }
-
-        .project-link {
+        }   color: #ffd700;
+            font-size: 1.5rem;
+        .project-link {om: 1rem;
             display: inline-block;
             padding: 0.5rem 1rem;
             background: #ffd700;
-            color: #1a1a1a;
+            color: #1a1a1a;-block;
             text-decoration: none;
             border-radius: 25px;
             font-weight: bold;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .project-link:hover {
+        }   border-radius: 25px;
+            font-weight: bold;
+        .project-link:hover {form 0.3s ease, box-shadow 0.3s ease;
             transform: translateY(-2px);
             background: #daa520;
             box-shadow: 0 5px 15px rgba(218, 165, 32, 0.2);
-        }
-
-        .contact-info a {
+        }   transform: translateY(-2px);
+            background: #daa520;
+        .contact-info a { 5px 15px rgba(218, 165, 32, 0.2);
             color: #ffd700;
             text-decoration: none;
             transition: color 0.3s ease;
-        }
-
-        .contact-info a:hover {
+        }   color: #ffd700;
+            text-decoration: none;
+        .contact-info a:hover {.3s ease;
             color: #daa520;
             text-decoration: underline;
-        }
-
-        .project-content ul {
+        }contact-info a:hover {
+            color: #daa520;
+        .project-content ul {underline;
             list-style-type: none;
             padding: 0;
             margin: 0 0 1.5rem 0;
-        }
-
-        .project-content li {
+        }   list-style-type: none;
+            padding: 0;
+        .project-content li {m 0;
             position: relative;
             padding-left: 1.5em;
             margin-bottom: 0.5rem;
-            line-height: 1.4;
-        }
-
+            line-height: 1.4;e;
+        }   padding-left: 1.5em;
+            margin-bottom: 0.5rem;
         .project-content li:before {
             content: "•";
             position: absolute;
-            left: 0;
+            left: 0;tent li:before {
             color: #ffd700;
-        }
-    </style>
-</head>
-<body>
+        }   position: absolute;
+    </style>left: 0;
+</head>     color: #ffd700;
+<body>  }
     <header>
         <h1>Jericho Mordasiewicz</h1>
         <p>Nanotechnology Engineering Student</p>
         <p>University of Waterloo</p>
-    </header>
-
+    </header>op: 1rem;
+            right: 1rem;
     <div class="container">
         <section class="about">
             <h2>About Me</h2>
@@ -166,9 +166,96 @@
             sustainable technologies for the semiconductor and electronics manufacturing industries. This hands-on leadership 
             experience, combined with my strong theoretical foundation, enables me to drive innovation and solve complex 
             engineering challenges.</p>
+            position: fixed;
+            top: 0;
+            right: -300px;
+            height: 100vh;
+            width: 300px;
+            background: var(--header-bg);
+            padding: 2rem;
+            transition: right 0.3s ease;
+            z-index: 999;
+        }
+
+        .nav-menu.active {
+            right: 0;
+        }
+ct-link">View Project →</a>
+        .nav-menu ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .nav-menu li {
+            margin: 1rem 0;
+        }
+
+        .nav-menu a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        .timeline {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding: 2rem;
+            border-left: 2px solid var(--header-text-color);
+            margin-left: 1rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -0.5rem;
+            top: 2rem;
+            width: 1rem;
+            height: 1rem;
+            background: var(--header-text-color);
+            border-radius: 50%;
+        }
+
+        @media (max-width: 768px) {
+            .nav-toggle {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="nav-toggle">☰</button>
+    <nav class="nav-menu">
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#timeline">Work Timeline</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>Jericho Mordasiewicz</h1>
+        <p>Nanotechnology Engineering Student</p>
+        <p>University of Waterloo</p>
+    </header>
+
+    <div class="container">
+        <section id="about" class="about">
+            <h2>About Me</h2>
+            <p>As a Nanotechnology Engineering student at the University of Waterloo, I lead the UW-NanoRobotics Group, 
+            where we're pioneering the development of conductive and semiconductive inks for flexible electronics and arrays. 
+            My expertise lies at the intersection of materials science and engineering, focusing on creating efficient, 
+            sustainable technologies for the semiconductor and electronics manufacturing industries. This hands-on leadership 
+            experience, combined with my strong theoretical foundation, enables me to drive innovation and solve complex 
+            engineering challenges.</p>
         </section>
 
-        <section class="projects">
+        <section id="projects" class="projects">
             <h2>Projects</h2>
             <div class="project-grid">
                 <div class="project-card">
@@ -206,7 +293,22 @@
             </div>
         </section>
 
-        <section class="contact-info">
+        <section id="timeline" class="timeline">
+            <h2>Work Timeline</h2>
+            <div class="timeline-item">
+                <h3>2023</h3>
+                <p>Lead, UW-NanoRobotics Group</p>
+                <p>Development of conductive and semiconductive inks</p>
+            </div>
+            <div class="timeline-item">
+                <h3>2022</h3>
+                <p>Research Assistant</p>
+                <p>Photocatalytic cell manufacturing</p>
+            </div>
+            <!-- Add more timeline items as needed -->
+        </section>
+
+        <section id="contact" class="contact-info">
             <h2>Contact Information</h2>
             <p>Email: <a href="mailto:Jericho@Mordasiewicz.com">jericho@mordasiewicz.com</a></p>
             <p>LinkedIn: <a href="https://linkedin.com/in/jericho-mordasiewicz" target="_blank">linkedin.com/in/jericho-mordasiewicz</a></p>
