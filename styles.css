@@ -22,7 +22,7 @@ header {
     overflow: hidden;
     padding: 4rem 0;
     text-align: center;
-    opacity: 0;
+    opacity: 1;
     transform: translateY(-20px);
     transition: all 1s ease;
 }
@@ -35,8 +35,8 @@ header::after {
     right: 0;
     height: 30%;
     background: var(--accent-gradient);
-    clip-path: none; /* Remove zigzag pattern */
-    opacity: 0.3;
+    clip-path: none; 
+    opacity: 1;
 }
 
 .container {
