@@ -1,3 +1,13 @@
+fetch('version.txt')
+    .then(response => response.text())
+    .then(version => {
+        const lastVersion = localStorage.getItem('siteVersion');
+        if (lastVersion !== version) {
+            localStorage.setItem('siteVersion', version);
+            if (lastVersion) window.location.reload();
+        }
+    });
+
 document.addEventListener('DOMContentLoaded', () => {
     // Simple smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
