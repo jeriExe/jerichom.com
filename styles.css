@@ -2,7 +2,7 @@
     --text-color: #ffffff;
     --grey: #1a1a1a;
     --background-color: #2c003e;
-    --yellow: #ffd700;
+    --yellow: #FFD700;
 }
 
 .container {
@@ -53,18 +53,17 @@ section {
 
 .about {
     padding-left: 1rem;
-    padding-top: 0rem;
-    padding-bottom: 0.25rm;
+    padding-bottom: 0.25rem; /* Increased for visibility */
 }
+
 
 .about p {
     padding-left: 1rem;
-    padding-right: 1rem;
 }
 
 
 .projects h2{
-    padding-left: 1rem
+    padding-left: 1rem;
 }
 
 
@@ -141,3 +140,5 @@ section {
     color: #daa520;
     text-decoration: underline;
 }
+
+
