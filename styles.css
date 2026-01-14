@@ -354,3 +354,55 @@ section {
 }
 
 
+
+/* Header Icons */
+.header-icons {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    z-index: 10;
+}
+
+.header-icons .icon {
+    width: 2rem;
+    height: 2rem;
+    color: var(--coral);
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.header-icons a:hover .icon {
+    transform: scale(1.2);
+    color: #daa520; /* Gold color on hover, matching previous contact link style */
+    filter: drop-shadow(0 0 5px rgba(251, 113, 133, 0.5));
+}
+
+@media (max-width: 600px) {
+    .header-icons {
+        position: static;
+        justify-content: center;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+}
+
+
+/* Restore row layout for mobile */
+@media (max-width: 600px) {
+    .header-icons {
+        flex-direction: row;
+    }
+}
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 2rem;
+    color: var(--text-color);
+    opacity: 0.6;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.9rem;
+    width: 100%;
+}
