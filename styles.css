@@ -1,8 +1,8 @@
 :root {
-    --text-color: #ffffff;
-    --grey: #1a1a1a;
-    --background-color: #2c003e;
-    --yellow: #FFD700;
+    --text-color: #f8fafc;
+    --grey: #1e293b;
+    --background-color: #0f172a;
+    --yellow: #fb7185;
 }
 
 .container {
@@ -142,6 +142,215 @@ section {
 .contact-info a:hover {
     color: #daa520;
     text-decoration: underline;
+}
+
+/* Project Details specific styles */
+.project-detail {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: none; /* Hidden by default */
+}
+
+.project-detail.active {
+    display: block;
+}
+
+.project-detail section {
+    background: transparent;
+    backdrop-filter: none;
+}
+
+.project-detail h1 {
+    color: var(--yellow);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--yellow);
+    padding-bottom: 0.5rem;
+    display: inline-block;
+}
+
+.project-detail img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin: 2rem 0;
+}
+
+.back-link {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: var(--yellow);
+    color: var(--background-color);
+    border-radius: 25px;
+    font-weight: bold;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 1rem;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.back-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px #000000;
+}
+
+/* Timeline Styling - Vertical Alternating */
+.timeline-section {
+    padding: 2rem 1rem;
+    margin-top: 2rem;
+}
+
+.timeline-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 2rem 0;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Vertical Center Line */
+.timeline-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background: var(--yellow);
+    transform: translateX(-50%);
+    z-index: 1;
+    opacity: 0.3;
+}
+
+.timeline-item {
+    width: calc(50% - 30px); /* 50% minus half the gap */
+    background: var(--grey);
+    border: 1px solid rgba(251, 113, 133, 0.3);
+    border-radius: 12px;
+    padding: 1.5rem;
+    position: relative;
+    z-index: 2;
+    transition: all 0.3s ease;
+    margin-bottom: 2rem;
+}
+
+/* Left Side Items (Odd) */
+.timeline-item:nth-child(odd) {
+    align-self: flex-start;
+    text-align: right; /* Header aligns to center */
+}
+
+/* Right Side Items (Even) */
+.timeline-item:nth-child(even) {
+    align-self: flex-end;
+    text-align: left;
+}
+
+.timeline-item:hover {
+    border-color: var(--yellow);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    transform: translateY(-5px);
+    z-index: 10;
+}
+
+/* Icons */
+.timeline-icon {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    border-radius: 50%;
+    background: white;
+    padding: 2px;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+}
+
+/* Align icon with text */
+.timeline-item:nth-child(odd) .timeline-summary {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.timeline-item:nth-child(even) .timeline-summary {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+
+.timeline-date {
+    font-size: 0.85rem;
+    color: var(--yellow);
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+    display: block;
+}
+
+.timeline-summary h3 {
+    font-size: 1.2rem;
+    margin: 0.25rem 0;
+    color: var(--text-color);
+}
+
+.timeline-summary h4 {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-color);
+    opacity: 0.8;
+    margin: 0;
+}
+
+.timeline-details {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    text-align: left; /* Always left align bullets */
+}
+
+.timeline-item:hover .timeline-details {
+    max-height: 500px;
+    opacity: 1;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(251, 113, 133, 0.2);
+}
+
+.timeline-details ul {
+    padding-left: 1.2rem;
+    margin: 0;
+}
+
+.timeline-details li {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+    .timeline-container::before {
+        left: 20px; /* Line moves to left */
+    }
+    
+    .timeline-item {
+        width: calc(100% - 50px); /* Full width minus offset */
+        align-self: flex-end; /* All move to right of line */
+        margin-left: auto; /* Push to right */
+        text-align: left;
+    }
+
+    .timeline-item:nth-child(odd),
+    .timeline-item:nth-child(even) {
+        align-self: flex-end;
+        text-align: left;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-summary {
+        align-items: flex-start;
+    }
 }
 
 

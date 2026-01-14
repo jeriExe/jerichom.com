@@ -12,97 +12,322 @@
 </head>
 
 <body>
-    <header>
-        <h1>Jericho Mordasiewicz</h1>
-        <p>Nanotechnology Engineering @ University of Waterloo</p>
-        <p>SetOps @ Formlabs</p>
-    </header>
+    <!-- Home View -->
+    <div id="home-view">
+        <header>
+            <h1>Jericho Mordasiewicz</h1>
+            <p>Nanotechnology Engineering @ University of Waterloo</p>
+            <p>SetOps @ Formlabs</p>
+        </header>
 
-    <div class="container">
-        <section id="about" class="about">
-            <h2>About Me</h2>
-            <p>Settings Optimization intern at Formlabs, working on next-gen printers, resins, and accessories in a mixed lab + data focused test and development space. 
-                Workflow involves Git based source management, Python for json scripting and data analysis, SOP documentation, 
-                metrology for mechanical and optical properties.
-            </p>
-            <p>
-                My work includes:
-            <br>Discussions around resin setting and optimization development, shipping, and stakeholder meetings. 
-            <br> Methodologies such as: Design for Manufacturing (DFM), Design for Test (DFT), Rapid Prototyping (RP).
-            <br> Tools like: Git, Python, Keyence 3D scanners, micrometers, tensile testing, shore hardness testing.</p>
-            <p>Director for UW-NanoRobotics Group, advancing additive manufacturing for flexible electronics. We also host an endorsed and accredited curriculum program with the Waterloo Institute of Nanotechnology (WIN) to reinforce engineering concepts through hands-on projects.</p>
-            <h2>4 Fun</h2>
-            <p>Climbing, and when I'm lucky kitesurfing are my favourite ways to spend time, I'm also a big fan of cooking and trying new recipes.</p>
-        </section>
+        <main class="container">
+            <section id="about" class="about">
+                <h2>About Me</h2>
+                <p>Settings Optimization intern at Formlabs, working in a mixed lab + data focused test and development space. 
+                    Workflow involves Git based source management, Python for json scripting and data analysis, SOP documentation, 
+                    metrology for mechanical and optical properties.
+                </p>
+                <p>My work involves discussions around product development, shipping, and stakeholder meetings. Methodologies such as: Design for Manufacturing (DFM), Design for Test (DFT), Rapid Prototyping (RP)</p>
+                <p>Director for UW-NanoRobotics Group, advancing additive manufacturing for flexible electronics. We also host an endorsed and accredited curriculum program with the Waterloo Institute of Nanotechnology (WIN) to reinforce engineering concepts through hands-on projects.</p>
+                <h2>4 Fun</h2>
+                <p>Climbing, and when I'm lucky kitesurfing are my favourite ways to spend time, I'm also a big fan of cooking and trying new recipes.</p>
+            </section>
 
-        <section id="projects" class="projects">
-            <h2>Patents and Publications</h2>
-            <div class="project-grid">  
-                <div class="project-card">
-                    <img src="assets\PeCOD.jpg" alt="Project 1" class="project-image">
-                    <div id="patents-section" class="project-content">
-                        <h3>Photoanode Deposition Process Design <span style="white-space: nowrap;">(Patent Pending)</span></h3>
-                        <ul>
-                            <li>Developed a deposition process for MANTECH's COD biosensors to achieve desired thickness and porosity</li>
-                            <li>Resolved yield issues by adjusting deposition parameters and implementing new data acquisition and QA steps</li>
-                            <li>Created SOPs and instructional videos to ensure the deposition process can be replicated for device production.</li>
-                        </ul>
-                        <a href="projects/deposition-process.html" class="project-link">View More</a>
+            <!-- Experience Timeline -->
+            <section class="timeline-section">
+                <h2>Experience</h2>
+                <div class="timeline-container">
+                    <!-- Term 1: NMSL -->
+                    <div class="timeline-item">
+                        <div class="timeline-summary">
+                            <img src="https://uwaterloo.ca/favicon.ico" alt="University of Waterloo Logo" class="timeline-icon">
+                            <div class="timeline-date">Winter 2023</div>
+                            <h3>Nano & Micro Systems Lab</h3>
+                            <h4>Research Assistant</h4>
+                        </div>
+                        <div class="timeline-details">
+                            <ul>
+                                <li>Assisted in the fabrication of micro-scale devices using cleanroom protocols.</li>
+                                <li>Conducted material characterization using SEM and optical microscopy.</li>
+                                <li>Optimized etching processes for silicon-based substrates.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Term 2: NMSL -->
+                    <div class="timeline-item">
+                        <div class="timeline-summary">
+                            <img src="https://uwaterloo.ca/favicon.ico" alt="University of Waterloo Logo" class="timeline-icon">
+                            <div class="timeline-date">Fall 2023</div>
+                            <h3>Nano & Micro Systems Lab</h3>
+                            <h4>Research Assistant</h4>
+                        </div>
+                        <div class="timeline-details">
+                            <ul>
+                                <li>Advanced thin-film deposition techniques for functional nanomaterials.</li>
+                                <li>Analyzed experimental data to correlate process parameters with device performance.</li>
+                                <li>Collaborated on publication-quality technical documentation and lab reports.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Term 3: Formlabs -->
+                    <div class="timeline-item">
+                        <div class="timeline-summary">
+                            <img src="https://formlabs.com/favicon.ico" alt="Formlabs Logo" class="timeline-icon">
+                            <div class="timeline-date">Spring 2024</div>
+                            <h3>Formlabs</h3>
+                            <h4>Settings Optimization Intern</h4>
+                        </div>
+                        <div class="timeline-details">
+                            <ul>
+                                <li>Automated data analysis pipelines using Python for resin printing performance.</li>
+                                <li>Managed Git-based source control for JSON print-setting configurations.</li>
+                                <li>Performed metrology on mechanical properties of printed parts for QA validation.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Term 4: Formlabs -->
+                    <div class="timeline-item">
+                        <div class="timeline-summary">
+                            <img src="https://formlabs.com/favicon.ico" alt="Formlabs Logo" class="timeline-icon">
+                            <div class="timeline-date">Winter 2025</div>
+                            <h3>Formlabs</h3>
+                            <h4>Settings Optimization Intern</h4>
+                        </div>
+                        <div class="timeline-details">
+                            <ul>
+                                <li>Developed SOPs for new hardware testing and metrology workflows.</li>
+                                <li>Optimized optical property testing parameters for translucent materials.</li>
+                                <li>Collaborated with cross-functional teams to align R&D goals with manufacturing needs.</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-                <div class="project-card">
-                    <img src="assets\fs_laser.jpg" alt="Project 2" class="project-image">
-                    <div class="project-content">
-                        <h3>Laser Induced Defect TiO2 for Solar Panels and Water Sensing <span style="white-space: nowrap;">(Publication Pending)</span></h3>
-                        <ul>
-                            <li>Fabricated photocatalytic cells to be applied to solar conversion and wastewater sensing</li>
-                            <li>Optimized deposition techniques for anode materials with Python & data analysis principles</li>
-                            <li>Ensured feasibility of research-oriented process design for industrial use and scalability</li>
-                        </ul>
-                        <a href="projects/photocatalytic-cell.html" class="project-link">View More</a>
-                    </div>
-                </div>
-            </div>
-        </section>
+            </section>
 
-        <section id="projects" class="projects">
-            <h2>UW-NanoRobotics Group</h2>
-            <div class="project-grid">  
-                <div class="project-card">
-                    <img src="assets\materials_team.jpg" alt="Team" class="project-image">
-                    <div class="project-content">
-                        <h3>Director for the University of Waterloo NanoRobotics Group</h3>
-                        <ul>
-                            <li>Originally the materials team lead, where we made conductive inks. More on that...</li>
-                            <li>Leading 70+ students across engineering, science, and business to advance additive manufacturing</li>
-                            <li>Established an accredited, endorsed curriculum program with the Waterloo Institute of Nanotechnology <a href="https://uwaterloo.ca/institute-nanotechnology/" target="_blank">(WIN)</a> to reinforce engineering concepts through hands-on projects</li>
-                        </ul>
-                        <a href="https://www.uwnrg.ca/" class="project-link">Team Website Link</a>
+            <section id="projects" class="projects">
+                <h2>Patents and Publications</h2>
+                <div class="project-grid">  
+                    <div class="project-card">
+                        <img src="assets/PeCOD.jpg" alt="Photoanode deposition process for COD biosensors" class="project-image">
+                        <div id="patents-section" class="project-content">
+                            <h3>Photoanode Deposition Process Design <span style="white-space: nowrap;">(Patent Pending)</span></h3>
+                            <ul>
+                                <li>Developed a deposition process for MANTECH's COD biosensors to achieve desired thickness and porosity</li>
+                                <li>Resolved yield issues by adjusting deposition parameters and implementing new data acquisition and QA steps</li>
+                                <li>Created SOPs and instructional videos to ensure the deposition process can be replicated for device production.</li>
+                            </ul>
+                            <a href="#deposition-process" class="project-link">View More</a>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="assets/fs_laser.jpg" alt="Femtosecond laser setup for TiO2 defect engineering" class="project-image">
+                        <div class="project-content">
+                            <h3>Laser Induced Defect TiO2 for Solar Panels and Water Sensing <span style="white-space: nowrap;">(Publication Pending)</span></h3>
+                            <ul>
+                                <li>Fabricated photocatalytic cells to be applied to solar conversion and wastewater sensing</li>
+                                <li>Optimized deposition techniques for anode materials with Python & data analysis principles</li>
+                                <li>Ensured feasibility of research-oriented process design for industrial use and scalability</li>
+                            </ul>
+                            <a href="#photocatalytic-cell" class="project-link">View More</a>
+                        </div>
                     </div>
                 </div>
-                <div class="project-card">
-                    <img src="assets\AgNP.jpg" alt="Project 3" class="project-image">
-                    <div id="nanorobotics-section" class="project-content">
-                        <h3>Conductive Ink Synthesis and R&D for Additive Manufacturing (In Progress)</h3>
-                        <ul>
-                            <li>Directed synthesis of silver nanoparticles for use in flexible PCBs with an application to wearable electronics</li>
-                            <li>Tested ink conductivity, adhesion, and ductility with various substrates and sintering temperatures</li>
-                            <li>Collaborated through goal alignment and technical documentation including SOPs and BOMs</li>
-                        </ul>
-                        <a href="projects/conductive-ink.html" class="project-link">View Project</a>
-                    </div>
-                </div>
-        </section>
+            </section>
 
-        <section id="contact" class="contact-info">
-            <h2>Contact Information</h2>
-            <div>
-                <p>Email: <a href="mailto:Jericho@Mordasiewicz.com">jericho@mordasiewicz.com</a></p>
-                <p>LinkedIn: <a href="https://linkedin.com/in/jericho-mordasiewicz" target="_blank">linkedin.com/in/jericho-mordasiewicz</a></p>
-            </div>
-        </section>
+            <section class="projects">
+                <h2>UW-NanoRobotics Group</h2>
+                <div class="project-grid">  
+                    <div class="project-card">
+                        <img src="assets/materials_team.jpg" alt="UW-NanoRobotics materials team working in the lab" class="project-image">
+                        <div class="project-content">
+                            <h3>Director for the University of Waterloo NanoRobotics Group</h3>
+                            <ul>
+                                <li>Originally the materials team lead, where we made conductive inks. More on that...</li>
+                                <li>Leading 70+ students across engineering, science, and business to advance additive manufacturing</li>
+                                <li>Established an accredited, endorsed curriculum program with the Waterloo Institute of Nanotechnology <a href="https://uwaterloo.ca/institute-nanotechnology/" target="_blank" rel="noopener noreferrer">(WIN)</a> to reinforce engineering concepts through hands-on projects</li>
+                            </ul>
+                            <a href="https://www.uwnrg.ca/" class="project-link" target="_blank" rel="noopener noreferrer">Team Website Link</a>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="assets/AgNP.jpg" alt="Silver nanoparticle synthesis for conductive ink" class="project-image">
+                        <div id="nanorobotics-section" class="project-content">
+                            <h3>Conductive Ink Synthesis and R&D for Additive Manufacturing (In Progess)</h3>
+                            <ul>
+                                <li>Directed synthesis of silver nanoparticles for use in flexible PCBs with an application to wearable electronics</li>
+                                <li>Tested ink conductivity, adhesion, and ductility with various substrates and sintering temperatures</li>
+                                <li>Collaborated through goal alignment and technical documentation including SOPs and BOMs</li>
+                            </ul>
+                            <a href="#conductive-ink" class="project-link">View Project</a>
+                        </div>
+                    </div>
+            </section>
+
+            <section id="contact" class="contact-info">
+                <h2>Contact Information</h2>
+                <div>
+                    <p>Email: <a href="mailto:Jericho@Mordasiewicz.com">jericho@mordasiewicz.com</a></p>
+                    <p>LinkedIn: <a href="https://linkedin.com/in/jericho-mordasiewicz" target="_blank" rel="noopener noreferrer">linkedin.com/in/jericho-mordasiewicz</a></p>
+                </div>
+            </section>
+        </main>
     </div>
+
+    <!-- Conductive Ink View -->
+    <main id="conductive-ink" class="project-detail">
+        <a href="#nanorobotics-section" class="back-link">Back to Portfolio</a>
+        <section>
+            <h1>Nano Silver Conductive Inks</h1>
+        </section>
+        <div class="project-grid"> 
+            <div class="project-card">
+                <img src="assets/uwnrg_chip_render.jpg" alt="3D render of the Conductive Hybrid Ink Printer (CHIP)" class="project-image">
+                <h2>Conductive Hybrid Ink Printer (CHIP)</h2>
+            </div>
+            <div class="project-card">
+                <img src="assets/ink_test.jpg" alt="Viscosity testing of conductive ink across different solvent ratios" class="project-image">
+                <h2>Tested Viscosity Across Different Solvent Ratios</h2>
+            </div>
+        </div>
+    
+        <div class="project-grid"> 
+            <div class="project-card">
+                <div class ="project-content">
+                    <h2>Project Overview</h2>
+                    <p>
+                        In this project, I led a multidisciplinary team focused on the synthesis and optimization of conductive inks for additive manufacturing, 
+                        specifically targeting silver nanoparticle formulations for flexible PCBs in wearable electronics. This ink could be used by the printer the mechanical team was designing (CHIP, pictured above).
+                        My leadership responsibilities included setting project milestones, aligning team goals, and 
+                        facilitating R&D, production, and quality assurance (QA). 
+                        I established clear communication channels and coordinated the creation of technical documentation such as SOPs and BOMs to ensure knowledge transfer and process consistency. 
+                        By mentoring junior researchers and fostering a collaborative lab environment, 
+                        I helped drive innovation in ink formulation, deposition techniques, and performance testing, 
+                        all while maintaining a strong focus on safety and reproducibility.
+                    </p>
+                    <h2>Technologies Used</h2>
+                    <ul>
+                        <li>SEM/XRD/DLS for nanoparticle morphology, crystalline structure, and size distribution, respectively.</li>
+                        <li>Collaborative tools (Git, Notion) for version control and technical documentation</li>
+                        <li>Python scripts for analyzing conductivity/adhesion test data</li>
+                        <li>General lab skills and knowledge transfer</li>
+                        <li>Thermal sintering ovens with programmable temperature profiles</li>
+                    </ul>
+                    <h2>Working On</h2>
+                    <ul>
+                        <li>Conductivity improvements -> mainly particles diameter control and mass loading</li>
+                        <li>Viscosity control -> Optimizing binder-to-solvent ratios for printhead compatibility</li>
+                        <li>Sintering processes -> Literature review and emperical testing</li>
+                    </ul>
+                </div>
+            </div>
+        </div> 
+    </main>
+
+    <!-- Deposition Process View -->
+    <main id="deposition-process" class="project-detail">
+        <a href="#patents-section" class="back-link">Back to Portfolio</a>
+        <section>
+            <h1>Deposition Process Design</h1>
+        </section>
+        <div class="project-grid"> 
+            <div class="project-card">
+                <img src="assets/before.jpg" alt="Unoptimized photoanode deposition (Before)" class="project-image">
+                <h2>Before Implementation</h2>
+            </div>
+            <div class="project-card">
+                <img src="assets/after.jpg" alt="Optimized uniform photoanode deposition (After)" class="project-image">
+                <h2>After Implementation</h2>
+            </div>
+        </div>
+    
+        <div class="project-grid"> 
+            <div class="project-card">
+                <div class ="project-content">
+                    <h2>Project Overview</h2>
+                    <p>
+                        My role was to develop a deposition process for MANTECH’s chemical oxygen demand (COD) biosensors. 
+                        I wanted to achieve a uniform coating of the photoanode material on the substrate, increase yield, and improve adhesion (therby lifetime of the sensor).
+                        My two main focuses were on the environmental factors affecting the deposition process (temperature, humidity) as well as the human error/variability observed bewtween batches.
+                        I tuned the solution's surface tension to ensure it could be evenly deposited onto the substrate with the desired thickness and porosity. 
+                        The initial results were promising but indicated room for improvement in yield and adhesion. 
+                        To enhance the yield, I adjusted deposition parameters and implemented new quality assurance (QA) steps using data acquisition. 
+                        The adhesion issues between batches were solved by employing a surface treatment normally used for silicon wafers in the Quantum Nano Fabrication and Characterization Facility (QNFCF) cleanroom. 
+                        I then created comprehensive standard operating procedures (SOPs) and instructional videos to ensure the process could be consistently replicated for device production.
+                    </p>
+                    <p>
+                        **I signed an NDA with MANTECH and am unable to share the exact details of the deposition process.**
+                    </p>
+                    <h2>Technologies Used</h2>
+                    <ul>
+                        <li>UV-VIS spectroscopy to monitor oxidation of reference pollutants</li>
+                        <li>Plasma etching to clean and functionalize the surface for wetability (in cleanroom)</li>
+                        <li>Open source process flow tools to design, test, and ensure QA standards are met</li>
+                        <li>Python for data aquisition, analysis and process optimization</li>
+                    </ul>
+                    <h2>Results</h2>
+                    <ul>
+                        <li>Quality assurance (QA) protocols, allowed a 150% increase in device production volume </li>
+                        <li>Device yield was increased by 15%, manufacturing time reduced by 40%</li>
+                        <li>Environmental factors no longer have drastic (or any observed) affects on yield</li>
+                        <li>MANTECH’s in-house average QA runtime was reduced from 6h to 3h due to the film's stable nature</li>
+                    </ul>
+                </div>
+            </div>
+        </div> 
+    </main>
+
+    <!-- Photocatalytic Cell View -->
+    <main id="photocatalytic-cell" class="project-detail">
+        <a href="#patents-section" class="back-link">Back to Portfolio</a>
+        <section>
+            <h1>Laser induced Defect TiO2 for Solar Panels and Water Sensing</h1>
+        </section>
+        <div class="project-grid">
+            <div class="project-card">
+                <img src="assets/fs_laser_full.jpg" alt="Setup for femtosecond laser induced defect TiO2 synthesis" class="project-image">
+                <h2>Femtosecond Laser Setup</h2>
+            </div>
+            <div class="project-card">
+                <img src="assets/degraded .jpg" alt="Experimental result showing photoanode degradation" class="project-image">
+                <h2>Photoanode degradation >:&#40;</h2>
+            </div>
+        </div>
+    
+        <div class="project-grid"> 
+            <div class="project-card">
+                <div class ="project-content">
+                    <h2>Project Overview</h2>
+                    <p>
+                        My role focused on developing laser-induced defect TiO₂ photoanodes for applications in solar energy conversion, 
+                        organic pollutant oxidation (breaking down harmful chemicals), and wastewater sensing. 
+                        Key objectives included achieving uniform defect engineering, preventing photoanode degradation, and ensuring reliable fabrication for industrial adoption. 
+                        Using root cause analysis with cyclic voltammetry (CV) and electrochemical impedance spectroscopy (EIS), 
+                        I identified and mitigated degradation mechanisms in TiO₂, enabling stable performance.
+                        I optimized spray-coating deposition parameters (e.g., material composition, pressure, and surface treatment) to control film quality, 
+                        nanosecond-pulsed TiO₂ for Ti³⁺/oxygen vacancies, and femtosecond-pulsed TiO₂ for surface-localized Ti³⁺/oxygen vacancies. Batch-to-batch variability was addressed through Python-driven data analysis, which correlated process inputs with material properties. Standardized protocols were then developed to ensure reproducibility across academic and industrial settings.
+
+                    </p>
+                    <h2>Technologies Used</h2>
+                    <ul>
+                        <li>Electrochemical methods: CV, LSV, EIS, for redox couples, (ir)reversible capacitive effects, double layer charging, approximate electrochemical surface area, and solar light </li>
+                        <li>Nanosecond/femtosecond pulsed lasers to tailor TiO₂ defect profiles</li>
+                        <li>Spray coating, optimized for 95% throughput with controlled porosity/thickness</li>
+                        <li>Data acquisition with BioLogic and analysis with Python for quality analysis and control</li>
+                        <li>Material characterization with SEM, and XRD (not by me) to validate defect states (Ti³⁺, oxygen vacancies), UV-vis for pollutant oxidation behavior</li>
+                    </ul>
+                    <h2>Results</h2>
+                    <ul>
+                        <li>Eliminated photoanode degradation, enabling the material to be photocatalytically tested</li>
+                        <li>Achieved 95% throughput in electrode fabrication via spray-coating optimization</li>
+                        <li>Reduced batch variability by 70%, process design validated for small scale</li>
+                        <li>Soon to be published :D</li>
+                    </ul>
+                </div>
+            </div>
+        </div> 
+    </main>
 </body>
 </html>
-
-
