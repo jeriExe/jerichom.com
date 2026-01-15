@@ -78,7 +78,7 @@ section {
     background: var(--card-bg);
     padding: 1rem;
     border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0);
+    /* box-shadow: 0 5px 15px rgba(0, 0, 0); */
     display: flex;
     flex-direction: column; 
     gap: 1rem;
@@ -93,7 +93,7 @@ section {
     aspect-ratio: 1 / 1 !important;
     object-fit: cover;
     border-radius: 10px;
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+    /* box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2); */
     display: block
 }
 
@@ -117,8 +117,8 @@ section {
 }
 
 .project-link:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 15px #000000;
+    /* transform: translateY(-3px); */
+    /* box-shadow: 0 8px 15px #000000; */
 }
 
 .contact-info{
@@ -156,6 +156,10 @@ section {
     display: block;
 }
 
+.hidden {
+    display: none !important;
+}
+
 .project-detail section {
     background: transparent;
     backdrop-filter: none;
@@ -190,8 +194,8 @@ section {
 }
 
 .back-link:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 15px #000000;
+    /* transform: translateY(-3px); */
+    /* box-shadow: 0 8px 15px #000000; */
 }
 
 /* Timeline Styling - Vertical Alternating */
@@ -249,7 +253,7 @@ section {
 
 .timeline-item:hover {
     border-color: var(--coral);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    /* box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); */
     transform: translateY(-5px);
     z-index: 10;
 }
@@ -304,19 +308,18 @@ section {
 }
 
 .timeline-details {
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    text-align: left; /* Always left align bullets */
-}
-
-.timeline-item:hover .timeline-details {
-    max-height: 500px;
+    /* Always visible in flat design */
+    max-height: none;
+    overflow: visible;
     opacity: 1;
     margin-top: 1rem;
     padding-top: 1rem;
     border-top: 1px solid rgba(251, 113, 133, 0.2);
+    text-align: left; 
+}
+
+.timeline-item:hover .timeline-details {
+    /* No changes needed on hover anymore */
 }
 
 .timeline-details ul {
@@ -362,47 +365,60 @@ section {
     right: 2rem;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
-    z-index: 10;
+    gap: 1.5rem;
+    z-index: 100;
 }
 
-.header-icons .icon {
-    width: 2rem;
-    height: 2rem;
+.header-icons a {
     color: var(--coral);
+    display: flex; /* Removes line-height issues with SVGs */
     transition: transform 0.2s ease, color 0.2s ease;
 }
 
-.header-icons a:hover .icon {
-    transform: scale(1.2);
-    color: #daa520; /* Gold color on hover, matching previous contact link style */
-    filter: drop-shadow(0 0 5px rgba(251, 113, 133, 0.5));
+.header-icons svg {
+    width: 2rem;
+    height: 2rem;
+    fill: currentColor;
+    /* filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3)); */
 }
 
-@media (max-width: 600px) {
-    .header-icons {
-        position: static;
-        justify-content: center;
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-    }
+.header-icons a:hover {
+    /* transform: scale(1.1) translateX(-2px); */
+    /* color: #daa520; Gold highlight */
 }
 
-
-/* Restore row layout for mobile */
-@media (max-width: 600px) {
-    .header-icons {
-        flex-direction: row;
-    }
+.header-icons a:focus-visible {
+    outline: 2px solid var(--coral);
+    outline-offset: 4px;
+    border-radius: 4px;
 }
+
 /* Footer Styling */
 footer {
     text-align: center;
     padding: 2rem 0;
-    margin-top: 2rem;
+    margin-top: 4rem;
     color: var(--text-color);
     opacity: 0.6;
     font-family: 'Space Grotesk', sans-serif;
     font-size: 0.9rem;
     width: 100%;
+    border-top: 1px solid rgba(255,255,255,0.1);
 }
+
+@media (max-width: 900px) {
+    .header-icons {
+        position: static; /* Flow naturally on mobile */
+        flex-direction: row;
+        justify-content: center;
+        margin: 1rem 0 2rem 0;
+        gap: 2.5rem;
+    }
+    
+    .header-icons a:hover {
+        /* transform: scale(1.1) translateY(-2px); Vertical hop on mobile */
+    }
+    /* Timeline Adjustments */
+    .timeline-container::before {
+        left: 20px; /* Line moves to left */
+    }

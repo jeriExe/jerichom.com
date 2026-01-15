@@ -1,46 +1,70 @@
-# Gemini Context & Project Documentation
+# Gemini Context & Project Documentation: Senior Frontend Portfolio
 
-This file serves as a living guide for AI agents and developers working on this portfolio project. It outlines architectural decisions, security standards, and coding conventions.
+This document serves as the "Source of Truth" for AI agents and developers. It defines the constraints for maintaining a high-performance, accessible, and fluid **Single-HTML Portfolio** architecture.
 
-## 1. Project Overview
-- **Type:** Static Personal Portfolio.
-- **Stack:** Vanilla HTML5, CSS3, JavaScript (ES6+).
-- **Deployment:** GitHub Pages.
-- **Key Files:**
-  - `index.HTML`: Main entry point.
-  - `styles.css`: Global styling using CSS variables.
-  - `script.js`: Core logic including version checking.
-  - `version.txt`: Used for client-side cache busting.
+---
 
-## 2. Core Conventions
+## 1. Architectural Blueprint
+- **Pattern:** Single Page Application (SPA) Lite.
+- **Entry Point:** `index.html` (The only HTML file).
+- **Style Engine:** Modern CSS (Custom Properties + Grid/Flexbox).
+- **Logic Layer:** Functional ES6+. No heavy frameworks (React/Vue).
+- **Caching:** Version-controlled cache busting via `version.txt`.
 
-### HTML
-- **Semantic Structure:** Use semantic tags (`<header>`, `<section>`, `<footer>`) to maintain accessibility and SEO.
-- **Links:**
-  - **Internal:** Use relative paths (e.g., `projects/conductive-ink.html`).
-  - **External:** All links opening in a new tab (`target="_blank"`) **MUST** include `rel="noopener noreferrer"` to prevent security vulnerabilities (tabnabbing).
-- **Images:** Ensure all `<img>` tags have descriptive `alt` attributes.
 
-### CSS (`styles.css`)
-- **Theming:** Rely strictly on CSS variables defined in `:root` (e.g., `var(--yellow)`, `var(--grey)`) for consistent coloring.
-- **Design:** Mobile-responsive layout using Flexbox/Grid.
 
-### JavaScript (`script.js`)
-- **Cache Busting:** The site implements a custom version check.
-  - Logic: Fetches `version.txt`. If the content differs from `localStorage['siteVersion']`, it updates storage and reloads the page.
-  - **Constraint:** Do not remove or alter this logic unless replacing it with a robust alternative.
+---
 
-## 3. Security Standards (GitHub Pages)
-- **External Links:** Strict enforcement of `rel="noopener noreferrer"` for all external links.
-- **Sensitive Data:** This is a client-side static site. NEVER commit API keys, secrets, or personal phone numbers directly into the source code.
+## 2. Core Development Standards
 
-## 4. AI Agent Workflow
-1.  **Context First:** Read `index.HTML` and `styles.css` before proposing UI changes to match existing aesthetics.
-2.  **Case Sensitivity:** GitHub Pages is case-sensitive (unlike Windows). Ensure file paths in code exactly match filenames (e.g., `assets/PeCOD.jpg` vs `pecod.jpg`).
-3.  **Verification:** After editing `script.js`, verify the `version.txt` fetch logic remains intact.
+### 🧱 HTML (Semantic & Accessible)
+- **Zero Div-Soup:** Use `<main>`, `<article>`, `<section>`, and `<aside>` to define page regions.
+- **Link Security:** Every `target="_blank"` link **must** have `rel="noopener noreferrer"`.
+- **Dynamic Content:** Use `data-attributes` for JS hooks (e.g., `<div data-view-container></div>`).
+- **A11y:** Every interactive element must be keyboard-accessible. Images must have descriptive `alt` text.
 
-## 5. Active Tasks / Technical Debt
-- [x] **Security Fix:** Scan all HTML files and add `rel="noopener noreferrer"` to `target="_blank"` links. (Completed 2026-01-12)
-- [x] **Path Standardization:** All asset paths standardized to forward slashes `/`. (Completed 2026-01-12)
-- [ ] **Structure:** Add a semantic `<footer>` to `index.HTML` and project pages.
-- [ ] **Optimization:** Convert heavy JPG/PNG assets to WebP where appropriate.
+### 🎨 CSS (Fluid Design System)
+- **Token-Based Styling:** All values (colors, spacing, transitions) must use `:root` variables.
+- **Layout:** Use **CSS Grid** for page structure and **Flexbox** for component alignment.
+- **Scaling & Fluidity:** - **No Fixed Widths:** Avoid `width: 800px`. Use `width: min(var(--max-width), 95vw)`.
+  - **Fluid Typography:** Use `clamp()` for headers (e.g., `font-size: clamp(1.5rem, 5vw, 3rem);`).
+  - **Relative Units:** Prioritize `rem` for typography and `em` for component-relative spacing.
+- **Performance:** Use `content-visibility: auto` on off-screen sections to optimize rendering on large monitors.
+
+
+
+### ⚡ JavaScript (Functional & Modular)
+- **State Management:** Object-based state to track active "views" (e.g., `const state = { currentView: 'home' }`).
+- **Cache Busting Protocol:**
+    - Fetch `version.txt`.
+    - If `remoteVersion !== localStorage.getItem('siteVersion')`:
+        - Clear cache and `window.location.reload(true)`.
+- **Event Delegation:** Attach listeners to the parent container to keep memory usage low.
+
+---
+
+## 3. Deployment & Environment
+- **Platform:** GitHub Pages (Case-Sensitive Linux Environment).
+- **Case Sensitivity:** Filenames must be strictly lowercase (e.g., `hero-image.webp`).
+- **Pathing:** Always use relative, forward-slash paths: `./assets/image.webp`.
+- **Local Testing:** Serve via Python: `python -m http.server 8888`.
+
+---
+
+## 4. AI Agent Protocol (Mandatory)
+1. **Scope Check:** Prioritize CSS solutions (e.g., `:hover`, `@media`) before writing JS logic.
+2. **Mobile-First:** Propose styles starting at `320px` width before scaling up to 4K.
+3. **Relative Execution:** When writing code, ensure padding and margins are proportional to the viewport using `vw`, `vh`, or `rem`.
+
+---
+
+## 5. Roadmap & Technical Debt
+
+### Active Sprint
+- [ ] **Componentization:** Move project data into a JSON object inside `script.js` for dynamic rendering.
+- [ ] **Fluid Reset:** Implement a CSS reset that defaults all images to `max-width: 100%`.
+- [ ] **Optimization:** Convert heavy JPG/PNG assets to WebP for faster loads.
+
+### Backlog
+- [ ] **Navigation:** Implement the `View Transitions API` for smooth "page" swaps.
+- [ ] **UX:** Add a "Back to Top" button that only appears when scrolling past 100vh.
