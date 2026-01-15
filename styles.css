@@ -252,10 +252,10 @@ section {
 }
 
 .timeline-item:hover {
-    border-color: var(--coral);
+    /* border-color: var(--coral); */
     /* box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); */
-    transform: translateY(-5px);
-    z-index: 10;
+    /* transform: translateY(-5px); */
+    /* z-index: 10; */
 }
 
 /* Icons */
