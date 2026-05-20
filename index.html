@@ -3,9 +3,12 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
 <title>Jericho Mordasiewicz</title>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link rel="stylesheet" href="styles.css?v=3">
+<script>document.write('<link rel="stylesheet" href="styles.css?v=' + Date.now() + '">');</script>
 </head>
 <body>
 <div id="root"></div>
@@ -14,8 +17,13 @@
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
 
-<script type="text/babel" src="data.jsx?v=2"></script>
-<script type="text/babel" src="components.jsx?v=2"></script>
-<script type="text/babel" src="app.jsx?v=2"></script>
+<script>
+(function() {
+  var v = Date.now();
+  ['data.jsx', 'components.jsx', 'app.jsx'].forEach(function(src) {
+    document.write('<script type="text/babel" src="' + src + '?v=' + v + '"><\/script>');
+  });
+})();
+</script>
 </body>
 </html>
