@@ -52,7 +52,7 @@ function Hero() {
   return (
     <Glass className="hero reveal">
       <div>
-        <h1 style={{ fontSize: 'clamp(22px, 2.6vw, 36px)', fontWeight: 500, lineHeight: 1.35, letterSpacing: '-.01em' }}>
+        <h1 style={{ fontSize: 'clamp(18px, 2.6vw, 30px)', fontWeight: 500, lineHeight: 1.25, letterSpacing: '-.01em' }}>
           Hi, I'm Jericho, a 3rd Year Nanotechnology Engineering student at the University of Waterloo. This site shows my projects, coauthorships, and internship timeline in a more thorough way than a resume allows. Cheers!
         </h1>
       </div>
@@ -75,7 +75,7 @@ function AboutCard() {
         <p>Materials, hardware, and the Python tooling around them.
 
         </p>
-        <p style={{ fontSize: 13, color: 'var(--ink-faint)' }}>SolidWorks · Onshape · Python (NumPy, SciPy, Pandas) · SQLite · Thin Films · SEM, XRD, UV-vis · cleanroom ops., Plasma Etch
+        <p style={{ fontSize: 12.5, color: 'var(--ink-faint)' }}>SolidWorks, Onshape · Python · SQLite · Thin Film Deposition · Plasma Etch · SEM, XRD, UV-vis · Process Design, Rapid Prototyping, Design of Experiments
 
           </p>
         </div>
@@ -208,6 +208,23 @@ function ProjectModal({ project, onClose }) {
     return () => window.removeEventListener('keydown', k);
   }, [onClose]);
   React.useEffect(() => {
+    if (!project) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    const forward = (e) => {
+      const scroller = modalRef.current;
+      if (!scroller) return;
+      if (scroller.contains(e.target)) return; // already inside, let it scroll natively
+      e.preventDefault();
+      scroller.scrollBy({ top: e.deltaY, left: e.deltaX, behavior: 'auto' });
+    };
+    document.addEventListener('wheel', forward, { passive: false });
+    return () => {
+      document.body.style.overflow = prev;
+      document.removeEventListener('wheel', forward);
+    };
+  }, [project]);
+  React.useEffect(() => {
     const el = modalRef.current;
     if (!el) return;
     const target = el.parentElement; // .modal
@@ -220,6 +237,51 @@ function ProjectModal({ project, onClose }) {
     onScroll();
     el.addEventListener('scroll', onScroll, { passive: true });
     return () => el.removeEventListener('scroll', onScroll);
+  }, [project]);
+  React.useEffect(() => {
+    const el = modalRef.current;
+    if (!el) return;
+    const grid = el.querySelector('.modal-images');
+    if (!grid || grid.classList.contains('modal-images--bento')) return;
+    const figures = grid.querySelectorAll('figure');
+    const gap = 12;
+    const layout = () => {
+      const colTracks = getComputedStyle(grid).gridTemplateColumns
+        .split(' ').filter((c) => c && c !== '0px');
+      const cols = Math.max(1, colTracks.length);
+      const colHeights = new Array(cols).fill(0);
+      figures.forEach((f, i) => {
+        const media = f.querySelector('img, video');
+        const cap = f.querySelector('figcaption');
+        const mh = media ? media.getBoundingClientRect().height : 0;
+        const ch = cap ? cap.getBoundingClientRect().height : 0;
+        const capMt = cap ? parseFloat(getComputedStyle(cap).marginTop) || 0 : 0;
+        const h = Math.ceil(mh + ch + capMt);
+        const colIdx = i % cols;
+        f.style.gridColumnStart = `${colIdx + 1}`;
+        f.style.gridRowStart = `${colHeights[colIdx] + 1}`;
+        f.style.gridRowEnd = `span ${h + gap}`;
+        colHeights[colIdx] += h + gap;
+      });
+    };
+    layout();
+    const media = grid.querySelectorAll('img, video');
+    const handlers = [];
+    media.forEach((m) => {
+      if (m.tagName === 'IMG' && !m.complete) {
+        m.addEventListener('load', layout);
+        handlers.push([m, 'load']);
+      } else if (m.tagName === 'VIDEO' && m.readyState < 1) {
+        m.addEventListener('loadedmetadata', layout);
+        handlers.push([m, 'loadedmetadata']);
+      }
+    });
+    const ro = new ResizeObserver(layout);
+    ro.observe(grid);
+    return () => {
+      handlers.forEach(([m, ev]) => m.removeEventListener(ev, layout));
+      ro.disconnect();
+    };
   }, [project]);
   if (!project) return null;
   const hasMoreBelow = !!(
@@ -239,12 +301,17 @@ function ProjectModal({ project, onClose }) {
         {project.images && project.images.length > 0 &&
           <div className="modal-images-wrap">
             <div className={"modal-images" + (project.imageLayout ? " modal-images--" + project.imageLayout : "")}>
-              {project.images.map((im, i) =>
-              <figure key={i}>
-                  <img src={im.src} alt={im.alt} loading="lazy" />
-                  <figcaption>{im.alt}</figcaption>
-                </figure>
-              )}
+              {project.images.map((im, i) => {
+                const mediaStyle = im.aspect ? { aspectRatio: im.aspect, height: 'auto' } : null;
+                return (
+                  <figure key={i} className={im.aspect ? 'has-aspect' : ''}>
+                    {/\.(mp4|webm|mov)$/i.test(im.src) ?
+                      <video src={im.src} style={mediaStyle} controls playsInline preload="metadata" /> :
+                      <img src={im.src} alt={im.alt} style={mediaStyle} loading="lazy" />}
+                    <figcaption>{im.alt}</figcaption>
+                  </figure>
+                );
+              })}
             </div>
           </div>
           }
@@ -254,7 +321,7 @@ function ProjectModal({ project, onClose }) {
         {project.note && <blockquote className="modal-quote">{project.note}</blockquote>}
         {project.tech &&
           <React.Fragment>
-            <h3 className="modal-h3">Technologies Used</h3>
+            <h3 className="modal-h3">Used</h3>
             <ul className="modal-list">
               {project.tech.map((t, i) => <li key={i}>{t}</li>)}
             </ul>

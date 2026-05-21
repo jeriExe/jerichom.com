@@ -4,13 +4,11 @@ const HERO = {
   name: "Jericho Mordasiewicz",
   title: "Nanotechnology Engineering",
   blurb: "Hi, I'm Jericho, a 3rd Year Nanotechnology Engineering student at the University of Waterloo. This site shows my projects, coauthorships, and internship timeline in a more thorough way than a resume allows. Cheers!",
-  status: "Available for Fall 2026",
 };
 
 const NOW = [
-  { k: "Location", v: "Waterloo, ON, Canada" },
+  { k: "Graduation Date", v: "April 2028" },
   { k: "Program",  v: "Nanotech Eng., U. Waterloo" },
-  { k: "Status",   v: "Upcoming Winter 2027 co-op" },
   { k: "GPA",      v: "3.6 / 4.0" },
 ];
 
@@ -117,7 +115,7 @@ const PROJECTS = [
       "Eliminated photoanode degradation, enabling the material to be photocatalytically tested",
       "Achieved 95% throughput in electrode fabrication via spray-coating optimization",
       "Reduced batch variability by 70%, process design validated for small scale",
-      "Soon to be published :D",
+      "Published :D",
     ],
   },
   {
@@ -132,7 +130,7 @@ const PROJECTS = [
     images: [
       { src: "uploads/before.jpg", alt: "Before implementation of deposition process" },
       { src: "uploads/after.jpg",  alt: "After implementation of deposition process" },
-      { src: "uploads/PeCOD.jpg",  alt: "MANTECH PeCOD L50 — the device the deposition process targets" },
+      { src: "uploads/PeCOD.jpg",  alt: "MANTECH PeCOD L50, IoT around the deposited thin films" },
     ],
     paragraphs: [
       "My role was to develop a deposition process for MANTECH's chemical oxygen demand (COD) biosensors. I wanted to achieve a uniform coating of the photoanode material on the substrate, increase yield, and improve adhesion (thereby lifetime of the sensor).",
@@ -154,6 +152,61 @@ const PROJECTS = [
     ],
   },
   {
+    id: "FormJet",
+    title: "FormJet, SLA wash & cure",
+    short: "FormJet",
+    sub: "Formlabs 2026 IAP (MIT, Harvard, Olin) Hackathon: FormJet is a benchtop SLA (resin) 3D printing post-processing station that automates the wash and cure steps.",
+    status: "Complete",
+    span: "span-2-2",
+    img: "uploads/formJet_full_static.jpeg",
+    images: [
+      { src: "uploads/formJet_full_static.jpeg", alt: "Form Jet", aspect: "9/16" },
+      { src: "uploads/formJet_group.jpeg", alt: "The Group: Formlabs Friends :)" },
+      { src: "uploads/formJet_drain.jpeg", alt: "Form Jet Drain Photo" },
+      { src: "uploads/formJet_demo_video.mp4", alt: "Form Jet Demo Video", aspect: "9/16" },
+    ],
+    paragraphs: [
+      "First paragraph \u2014 describe your role, the problem you tackled, and the objective. Replace this placeholder text.",
+      "Second paragraph \u2014 dive into the approach, methods, and what made the work interesting. Replace this placeholder text.",
+    ],
+    tech: [
+      "Onshape",
+      "Rapid Prototyping Tools (3D Printing, Laser Cutting)",
+      "System Integration",
+    ],
+    workingOn: [
+      "Currently exploring 1",
+      "Currently exploring 2",  
+    ],
+  },
+  {
+    id: "crimp",
+    title: "CrimpMark, Climbing Grip Strength",
+    short: "CrimpMark",
+    sub: "Formlabs Fall 2025 Intern Hackathon: It is hard to track progess in crimp strength (holding small ledges). CrimpMark tracks your intermediary progess over time.",
+    status: "Complete",
+    span: "span-2-2",
+    img: "uploads/placeholder.jpg",
+    images: [
+      { src: "uploads/placeholder.jpg", alt: "Caption for image 1" },
+      { src: "uploads/placeholder.jpg", alt: "Caption for image 2" },
+    ],
+    paragraphs: [
+      "First paragraph \u2014 describe your role, the problem you tackled, and the objective. Replace this placeholder text.",
+      "Second paragraph \u2014 dive into the approach, methods, and what made the work interesting. Replace this placeholder text.",
+    ],
+    tech: [
+      "Onshape",
+      "Arduino IDE",
+      "Basic Electronic Principles",
+    ],
+    results: [
+      "Real time force measurement based on wheatstone bridge and Arduino, with a custom 3D printed enclosure",
+      "After the hackathon",
+      "Result or outcome 3",
+    ],
+  },
+  {
     id: "ink",
     title: "Nano Silver Conductive Inks",
     short: "Nano Silver Conductive Inks",
@@ -164,76 +217,22 @@ const PROJECTS = [
     images: [
       { src: "uploads/AgNP.jpg",            alt: "Silver nanoparticle ink — synthesis & decanting" },
       { src: "uploads/uwnrg_chip_render.jpg", alt: "Conductive Hybrid Ink Printer (CHIP) render" },
-      { src: "uploads/ink_test.jpg",          alt: "Viscosity testing across different solvent ratios" },
     ],
     paragraphs: [
-      "In this project, I led a multidisciplinary team focused on the synthesis and optimization of conductive inks for additive manufacturing, specifically targeting silver nanoparticle formulations for flexible PCBs in wearable electronics. This ink could be used by the printer the mechanical team was designing (CHIP).",
-      "My leadership responsibilities included setting project milestones, aligning team goals, and facilitating R&D, production, and quality assurance (QA). I established clear communication channels and coordinated the creation of technical documentation such as SOPs and BOMs to ensure knowledge transfer and process consistency. By mentoring junior researchers and fostering a collaborative lab environment, I helped drive innovation in ink formulation, deposition techniques, and performance testing, all while maintaining a strong focus on safety and reproducibility.",
+      "In this project, I led a design team focused on the synthesis and optimization of conductive inks for additive manufacturing, specifically targeting silver nanoparticle formulations for flexible PCBs in wearable electronics. This ink could be used by the printer the mechanical team was designing (CHIP).",
+      "My leadership responsibilities included setting project milestones, aligning team goals, and facilitating R&D, production, and contributing as an IC. I established clear communication channels and coordinated the creation of technical documentation such as SOPs and BOMs to ensure knowledge transfer and process consistency."
     ],
     tech: [
       "SEM/XRD/DLS for nanoparticle morphology, crystalline structure, and size distribution, respectively.",
       "Collaborative tools (Git, Notion) for version control and technical documentation",
       "Python scripts for analyzing conductivity/adhesion test data",
-      "General lab skills and knowledge transfer",
+      "General wet lab skills",
       "Thermal sintering ovens with programmable temperature profiles",
     ],
     workingOn: [
       "Conductivity improvements: mainly particles diameter control and mass loading",
       "Viscosity control: Optimizing binder-to-solvent ratios for printhead compatibility",
       "Sintering processes: Literature review and empirical testing",
-    ],
-  },
-  {
-    id: "project-4",
-    title: "Project Title \u2014 4",
-    short: "Project Short Name 4",
-    sub: "One-line subtitle",
-    status: "In Progress",
-    span: "span-2-2",
-    img: "uploads/placeholder.jpg",
-    images: [
-      { src: "uploads/placeholder.jpg", alt: "Caption for image 1" },
-      { src: "uploads/placeholder.jpg", alt: "Caption for image 2" },
-    ],
-    paragraphs: [
-      "First paragraph \u2014 describe your role, the problem you tackled, and the objective. Replace this placeholder text.",
-      "Second paragraph \u2014 dive into the approach, methods, and what made the work interesting. Replace this placeholder text.",
-    ],
-    tech: [
-      "Technology / method 1",
-      "Technology / method 2",
-      "Technology / method 3",
-    ],
-    results: [
-      "Result or outcome 1",
-      "Result or outcome 2",
-      "Result or outcome 3",
-    ],
-  },
-  {
-    id: "project-5",
-    title: "Project Title \u2014 5",
-    short: "Project Short Name 5",
-    sub: "One-line subtitle",
-    status: "In Progress",
-    span: "span-2-2",
-    img: "uploads/placeholder.jpg",
-    images: [
-      { src: "uploads/placeholder.jpg", alt: "Caption for image 1" },
-      { src: "uploads/placeholder.jpg", alt: "Caption for image 2" },
-    ],
-    paragraphs: [
-      "First paragraph \u2014 describe your role, the problem you tackled, and the objective. Replace this placeholder text.",
-      "Second paragraph \u2014 dive into the approach, methods, and what made the work interesting. Replace this placeholder text.",
-    ],
-    tech: [
-      "Technology / method 1",
-      "Technology / method 2",
-      "Technology / method 3",
-    ],
-    workingOn: [
-      "Currently exploring 1",
-      "Currently exploring 2",
     ],
   },
 ];
