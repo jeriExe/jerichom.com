@@ -329,11 +329,7 @@ a { color: inherit; }
   display: flex; gap: 8px; align-items: center;
   margin-bottom: 16px;
 }
-.card-eyebrow .dot {
-  width: 6px; height: 6px; border-radius: 50%;
-  background: var(--accent);
-  box-shadow: 0 0 6px var(--accent);
-}
+.card-eyebrow .dot { display: none; }
 .card h2 {
   font-family: var(--font-sans);
   margin: 0 0 14px;
@@ -461,11 +457,11 @@ a { color: inherit; }
   display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 12px; margin: 18px 0 22px;
 }
-.modal-images:not(.modal-images--bento) {
+.modal-images:not(.modal-images--bento):not(.modal-images--stack-pair) {
   grid-auto-rows: 1px;
   row-gap: 0;
 }
-.modal-images:not(.modal-images--bento) figure {
+.modal-images:not(.modal-images--bento):not(.modal-images--stack-pair) figure {
   margin: 0;
 }
 .modal-images figure { margin: 0; }
@@ -502,6 +498,56 @@ a { color: inherit; }
     grid-column: auto; grid-row: auto;
   }
   .modal-images--bento figure:nth-child(3) img { height: 200px; }
+}
+
+/* Stack-pair layout: hero full-width, second full-width banner (top-cropped), then two side-by-side */
+.modal-images--stack-pair {
+  grid-template-columns: 1fr 1fr;
+}
+.modal-images--stack-pair figure:nth-child(1) {
+  grid-column: 1 / -1;
+  grid-row: 1;
+}
+.modal-images--stack-pair figure:nth-child(2) {
+  grid-column: 1 / -1;
+  grid-row: 2;
+}
+.modal-images--stack-pair figure:nth-child(3) {
+  grid-column: 1;
+  grid-row: 3;
+}
+.modal-images--stack-pair figure:nth-child(4) {
+  grid-column: 2;
+  grid-row: 3;
+}
+.modal-images--stack-pair figure:nth-child(1) img {
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center center;
+}
+.modal-images--stack-pair figure:nth-child(2) img {
+  height: auto;
+  aspect-ratio: 16 / 16;
+  object-fit: cover;
+  object-position: center 75%;
+}
+.modal-images--stack-pair figure:nth-child(3) img,
+.modal-images--stack-pair figure:nth-child(4) img {
+  height: 320px;
+  object-fit: cover;
+}
+@media (max-width: 560px) {
+  .modal-images--stack-pair { grid-template-columns: 1fr; }
+  .modal-images--stack-pair figure:nth-child(1),
+  .modal-images--stack-pair figure:nth-child(2),
+  .modal-images--stack-pair figure:nth-child(3),
+  .modal-images--stack-pair figure:nth-child(4) {
+    grid-column: auto; grid-row: auto;
+  }
+  .modal-images--stack-pair figure:nth-child(1) img { aspect-ratio: auto; height: 220px; }
+  .modal-images--stack-pair figure:nth-child(3) img,
+  .modal-images--stack-pair figure:nth-child(4) img { height: 220px; }
 }
 
 /* "Continue reading" cue — anchored to modal frame, 2rem above bottom */
@@ -587,11 +633,7 @@ a { color: inherit; }
   color: rgba(255,255,255,.72);
   margin-bottom: 6px;
 }
-.project .info .tag::before {
-  content: ""; width: 5px; height: 5px; border-radius: 50%;
-  background: var(--accent);
-  box-shadow: 0 0 6px var(--accent);
-}
+.project .info .tag::before { content: none; }
 .project .info h4 {
   margin: 0 0 4px;
   font-family: var(--font-sans);
@@ -611,13 +653,13 @@ a { color: inherit; }
   width: 32px; height: 32px;
   display: flex; align-items: center; justify-content: center;
   border-radius: 50%;
-  background: rgba(255,255,255,.12);
-  border: .5px solid rgba(255,255,255,.25);
+  background: rgba(0,0,0,.4);
+  border: .5px solid rgba(255,255,255,.35);
   -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
-  font-size: 14px; color: #2a2d36;
+  font-size: 14px; color: #fff;
   transition: transform .25s, background .25s;
 }
-.project:hover .open { transform: rotate(-45deg); background: rgba(255,255,255,.85); color: #1a1c24; }
+.project:hover .open { transform: rotate(-45deg); background: rgba(0,0,0,.7); }
 
 /* Bento sizes */
 .span-3-2 { grid-column: span 3; grid-row: span 2; }
@@ -644,12 +686,9 @@ a { color: inherit; }
   gap: 20px;
   padding: 22px 12px;
   border-bottom: .5px solid var(--glass-edge);
-  cursor: pointer;
-  transition: background .25s;
   border-radius: 12px;
 }
 .job:last-child { border-bottom: 0; }
-.job:hover { background: var(--glass-bg-hi); }
 
 .job-marker {
   position: relative;

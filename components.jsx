@@ -1,5 +1,12 @@
 // components.jsx — glass primitives + sections
 
+// Per-page-load cache-buster for local uploads. External URLs are left alone.
+const __ASSET_V = "2";
+function bust(src) {
+  if (!src || /^(https?:)?\/\//.test(src) || src.startsWith('data:')) return src;
+  return src + (src.includes('?') ? '&' : '?') + 'v=' + __ASSET_V;
+}
+
 function useReveal() {
   React.useEffect(() => {
     const els = document.querySelectorAll('.reveal');
@@ -67,7 +74,7 @@ function AboutCard() {
       <div className="about-body">
         <div className="portrait-wrap">
           <div className="portrait">
-            <img src="uploads/portrait.jpg" alt="Jericho Mordasiewicz" />
+            <img src={bust("uploads/portrait.jpg")} alt="Jericho Mordasiewicz" />
           </div>
         </div>
         <div>
@@ -109,7 +116,7 @@ function ProjectCard({ p, onOpen }) {
   return (
     <Glass className={"project " + p.span} onClick={() => onOpen(p)}>
       {p.img ?
-      <img className="project-img" src={p.img} alt="" loading="lazy" /> :
+      <img className="project-img" src={bust(p.img)} alt="" loading="lazy" style={p.imgPosition ? { objectPosition: p.imgPosition } : null} /> :
 
       <div className={"ph " + (p.ph || '')}></div>
       }
@@ -148,7 +155,7 @@ function JobRow({ job, idx, total, layout, expanded, onToggle }) {
         <span className="date">{job.date}</span>
         <span className="company">{job.company}</span>
         <span className="location">{job.location}</span>
-        {job.logo && <img className="job-logo" src={job.logo} alt={job.company + ' logo'} />}
+        {job.logo && <img className="job-logo" src={bust(job.logo)} alt={job.company + ' logo'} />}
       </div>
       <div className="job-body">
         <h4>{job.role}</h4>
@@ -242,7 +249,7 @@ function ProjectModal({ project, onClose }) {
     const el = modalRef.current;
     if (!el) return;
     const grid = el.querySelector('.modal-images');
-    if (!grid || grid.classList.contains('modal-images--bento')) return;
+    if (!grid || [...grid.classList].some((c) => c.startsWith('modal-images--'))) return;
     const figures = grid.querySelectorAll('figure');
     const gap = 12;
     const layout = () => {
@@ -286,12 +293,11 @@ function ProjectModal({ project, onClose }) {
   if (!project) return null;
   const hasMoreBelow = !!(
   project.paragraphs && project.paragraphs.length ||
-  project.note || project.tech || project.results || project.workingOn);
+  project.note || project.tech || project.results || project.workingOn || project.futureImprovements);
 
   return (
     <div className="modal-backdrop" onClick={onClose}>
       <Glass className="modal" onClick={(e) => e.stopPropagation()}>
-        <button className="modal-close" onClick={onClose} aria-label="close">×</button>
         <div className="modal-scroll" ref={modalRef}>
         <div className="meta-row">
           <span className="chip">{project.status}</span>
@@ -306,8 +312,8 @@ function ProjectModal({ project, onClose }) {
                 return (
                   <figure key={i} className={im.aspect ? 'has-aspect' : ''}>
                     {/\.(mp4|webm|mov)$/i.test(im.src) ?
-                      <video src={im.src} style={mediaStyle} controls playsInline preload="metadata" /> :
-                      <img src={im.src} alt={im.alt} style={mediaStyle} loading="lazy" />}
+                      <video src={bust(im.src)} style={mediaStyle} controls playsInline preload="metadata" /> :
+                      <img src={bust(im.src)} alt={im.alt} style={mediaStyle} loading="lazy" />}
                     <figcaption>{im.alt}</figcaption>
                   </figure>
                 );
@@ -340,6 +346,14 @@ function ProjectModal({ project, onClose }) {
             <h3 className="modal-h3">Working On</h3>
             <ul className="modal-list">
               {project.workingOn.map((t, i) => <li key={i}>{t}</li>)}
+            </ul>
+          </React.Fragment>
+          }
+        {project.futureImprovements &&
+          <React.Fragment>
+            <h3 className="modal-h3">Future Improvements</h3>
+            <ul className="modal-list">
+              {project.futureImprovements.map((t, i) => <li key={i}>{t}</li>)}
             </ul>
           </React.Fragment>
           }
