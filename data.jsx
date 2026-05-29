@@ -102,7 +102,7 @@ const PROJECTS = [
       { src: "uploads/degraded .jpg",  alt: "Photoanode degradation during testing" },
     ],
     paragraphs: [
-      <React.Fragment><a href="https://pubs.acs.org/doi/10.1021/acsaem.5c03961" target="_blank" rel="noopener">Please Read Here</a></React.Fragment>,
+      <React.Fragment><a href="https://pubs.acs.org/doi/10.1021/acsaem.5c03961" target="_blank" rel="noopener">Please Read Here</a> <em>if you are unable to access please reach out for PDF</em></React.Fragment>,
       "My role focused on developing laser-induced defect TiO\u2082 photoanodes for applications in solar energy conversion, organic pollutant oxidation (breaking down harmful chemicals), and wastewater sensing. Key objectives included achieving uniform defect engineering, preventing photoanode degradation, and ensuring reliable fabrication for industrial adoption.",
       "Using root cause analysis with cyclic voltammetry (CV) and electrochemical impedance spectroscopy (EIS), I identified and mitigated degradation mechanisms in TiO\u2082, enabling stable performance. I optimized spray-coating deposition parameters (e.g., material composition, pressure, and surface treatment) to control film quality, nanosecond-pulsed TiO\u2082 for Ti\u00b3\u207a/oxygen vacancies, and femtosecond-pulsed TiO\u2082 for surface-localized Ti\u00b3\u207a/oxygen vacancies. Batch-to-batch variability was addressed through Python-driven data analysis, which correlated process inputs with material properties. Standardized protocols were then developed to ensure reproducibility across academic and industrial settings.",
     ],
