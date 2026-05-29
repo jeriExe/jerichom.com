@@ -110,7 +110,7 @@ const PROJECTS = [
       "Nanosecond/femtosecond pulsed lasers to tailor TiO\u2082 defect profiles",
       "Spray coating, optimized for 95% throughput with controlled porosity/thickness",
       "Data acquisition with BioLogic and analysis with Python for quality analysis and control",
-      "Material characterization with SEM, and XRD to validate defect states (Ti\u00b3\u207a, oxygen vacancies), UV-vis for pollutant oxidation behavior",
+      "Material characterization with SEM for morphology, and XRD to validate phase purity, UV-vis for pollutant oxidation (degradation) behavior"
     ],
     results: [
       "Eliminated photoanode degradation, enabling the material to be photocatalytically tested",
