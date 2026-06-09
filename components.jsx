@@ -82,9 +82,13 @@ function AboutCard() {
         <p>Materials, hardware, and the Python tooling around them.
 
         </p>
-        <p style={{ fontSize: 12.5, color: 'var(--ink-faint)' }}>SolidWorks, Onshape · Python · SQLite · Thin Film Deposition · Plasma Etch · SEM, XRD, UV-vis · Process Design, Rapid Prototyping, Design of Experiments
-
-          </p>
+        <div style={{ fontSize: 12.5, color: 'var(--ink-faint)', lineHeight: 1.7, textAlign: 'left' }}>
+          <div><strong style={{ color: 'var(--ink-dim)' }}>Software &amp; Data:</strong> Python (NumPy, SciPy, Pandas) · SQLite · GCP · Git</div>
+          <div><strong style={{ color: 'var(--ink-dim)' }}>Design &amp; Engineering:</strong> SolidWorks · Onshape · Rapid Prototyping · DFM · DFT</div>
+          <div><strong style={{ color: 'var(--ink-dim)' }}>Fabrication:</strong> DLP Lithography · Photoresist Processing · Sputter Deposition · Plasma Etch · Cleanroom Op. (ISO 4–6)</div>
+          <div><strong style={{ color: 'var(--ink-dim)' }}>Characterization:</strong> XRD · UV-vis · SEM · Profilometer</div>
+          <div><strong style={{ color: 'var(--ink-dim)' }}>Instrumentation:</strong> Potentiostat · Oscilloscope · DMM · 4-Point Probe</div>
+        </div>
         </div>
       </div>
     </Glass>);

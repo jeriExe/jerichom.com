@@ -41,17 +41,17 @@ const JOBS = [
   {
     id: "fl-optimization",
     company: "Formlabs",
-    role: "Print Optimization Intern",
+    role: "SLA Print Optimization Intern",
     location: "Somerville, MA",
     date: "Sep 2025 – Jan 2026",
     shortDate: "Sep 25",
     logo: "uploads/formlabs_logo.png",
     tags: ["Materials", "Python", "Product"],
     bullets: [
-      "Partnered with software, product, and materials teams to ship a new resin on the Form 4 product line",
-      "Tuned print settings via JSON slicer configs for next-gen materials, achieving 100% validation print success",
+      <React.Fragment>Owned print setting development and DOE for <a href="https://formlabs.com/store/materials/flexible-80a-resin/" target="_blank" rel="noopener">Flexible 80A V2</a> on Form 4, from pre-formulation lock to launch</React.Fragment>,
+      <React.Fragment>Tuned the Supports V2 autogeneration algorithm for <a href="https://formlabs.com/store/materials/tough-1000-resin/" target="_blank" rel="noopener">Tough 1000</a> on Form 4, collaborating with product leads</React.Fragment>,
       "Built Python tooling for electromechanical sensor logs to identify root causes of print failures and increase yield",
-      "Drove print setting handoffs to production, shortening the cycle from formulation lock to a release-ready profile",
+      "Validated mechanical properties via hardness durometer, tensile, dimensional accuracy, and layer adhesion testing",
     ],
   },
   {
@@ -62,9 +62,9 @@ const JOBS = [
     date: "Jan 2025 – Apr 2025",
     shortDate: "Jan 25",
     logo: "uploads/nm_darkmode.png",
-    tags: ["Cleanroom", "Electrochem", "QA"],
+    tags: ["Cleanroom", "Electrochem", "Plasma Etch"],
     bullets: [
-      "Developed clean room quality assurance (QA) protocols, allowing a 150% increase in device production volume",
+      "Developed cleanroom plasma etch processes, allowing a 150% increase in production and improved film adhesion",
       "Optimized material composition and spray coating for working electrodes with a 95% process yield",
       "Conducted root cause analysis with electrochemical methods (CV, EIS), eliminating photoanode degradation",
     ],
