@@ -121,6 +121,31 @@ const PROJECTS = [
     ],
   },
   {
+    id: "hackerfab-litho",
+    title: "HackerFab, Litho Process Dev",
+    short: "HackerFab Litho Process Dev",
+    sub: "DLP direct write maskless stepper lithography",
+    status: "In Progress",
+    span: "span-2-2",
+    img: "uploads/first_patterns_USAF.png",
+    imageLayout: "bento",
+    images: [
+      { src: "uploads/first_patterns_QNFCF.png", alt: "QNFCF_pattern" },
+      { src: "uploads/first_patterns_QN.png", alt: "QN_pattern" },
+      { src: "uploads/first_patterns_USAF.png", alt: "USAF_pattern" },
+    ],
+    paragraphs: [
+      "As seen above there were a few issues including: missed steps, a gradient of over-underdevelopment (partially stemming from poor theta x alignment from stage sag), but promising results all the same.",
+    ],
+    tech: [
+      "DLP direct write maskless stepper lithography",
+      "Spin coating, soft bake, exposure, post-exposure bake, development, hard bake",
+    ],
+    results: [
+      "Stay tuned, MOSCAPs, further characterization, and mechanical improvements are incoming!",
+    ],
+  },
+  {
     id: "deposition",
     title: "Photoanode Thin Film Deposition Process Design",
     short: "Thin Film Deposition Process Design",
@@ -221,7 +246,7 @@ const PROJECTS = [
     title: "Nano Silver Conductive Inks",
     short: "Nano Silver Conductive Inks",
     sub: "Flexible PCBs for wearable electronics",
-    status: "In Progress",
+    status: "Halted",
     span: "span-2-2",
     img: "uploads/AgNP.jpg",
     images: [
