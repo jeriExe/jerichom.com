@@ -84,9 +84,10 @@ function AboutCard() {
         </p>
         <div style={{ fontSize: 12.5, color: 'var(--ink-faint)', lineHeight: 1.7, textAlign: 'left' }}>
           <div><strong style={{ color: 'var(--ink-dim)' }}>Software &amp; Data:</strong> Python (NumPy, SciPy, Pandas) · SQLite · GCP · Git</div>
-          <div><strong style={{ color: 'var(--ink-dim)' }}>Design &amp; Engineering:</strong> SolidWorks · Onshape · Rapid Prototyping · DFM · DFT</div>
-          <div><strong style={{ color: 'var(--ink-dim)' }}>Fabrication:</strong> DLP Lithography · Photoresist Processing · Sputter Deposition · Plasma Etch · Cleanroom Op. (ISO 4–6)</div>
-          <div><strong style={{ color: 'var(--ink-dim)' }}>Characterization:</strong> XRD · UV-vis · SEM · Profilometer</div>
+          <div><strong style={{ color: 'var(--ink-dim)' }}>Design:</strong> SolidWorks · Onshape · Rapid Prototyping (Stereolithography, FDM, Laser Cutting, Soldering) · DFT · DOE</div>
+          <div><strong style={{ color: 'var(--ink-dim)' }}>Fabrication:</strong> DLP &amp; Mask-Aligned Lithography · RIE · Plasma Etching &amp; Ashing · Sputtering · PECVD · Cleanroom (ISO 4)</div>
+          <div><strong style={{ color: 'var(--ink-dim)' }}>Wet Lab:</strong> Substrate Preparation · RCA Cleaning · Wet Etch · Spin Coating · Spray Coating · Tube Furnace Oxide Growth</div>
+          <div><strong style={{ color: 'var(--ink-dim)' }}>Characterization:</strong> XRD · UV-vis · SEM · XPS · Ellipsometer · Profilometer</div>
           <div><strong style={{ color: 'var(--ink-dim)' }}>Instrumentation:</strong> Potentiostat · Oscilloscope · DMM · 4-Point Probe</div>
         </div>
         </div>
