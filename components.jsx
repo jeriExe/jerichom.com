@@ -1,7 +1,7 @@
 // components.jsx — glass primitives + sections
 
 // Per-page-load cache-buster for local uploads. External URLs are left alone.
-const __ASSET_V = "3";
+const __ASSET_V = "4";
 function bust(src) {
   if (!src || /^(https?:)?\/\//.test(src) || src.startsWith('data:')) return src;
   return src + (src.includes('?') ? '&' : '?') + 'v=' + __ASSET_V;

@@ -127,12 +127,12 @@ const PROJECTS = [
     sub: "DLP direct write maskless stepper lithography",
     status: "In Progress",
     span: "span-2-2",
-    img: "uploads/first_patterns_USAF.png",
+    img: "uploads/first_patterns_USAF.jpg",
     imageLayout: "bento",
     images: [
-      { src: "uploads/first_patterns_QNFCF.png", alt: "QNFCF_pattern" },
-      { src: "uploads/first_patterns_QN.png", alt: "QN_pattern" },
-      { src: "uploads/first_patterns_USAF.png", alt: "USAF_pattern" },
+      { src: "uploads/first_patterns_QNFCF.jpg", alt: "QNFCF_pattern" },
+      { src: "uploads/first_patterns_QN.jpg", alt: "QN_pattern" },
+      { src: "uploads/first_patterns_USAF.jpg", alt: "USAF_pattern" },
     ],
     paragraphs: [
       "As seen above there were a few issues including: missed steps, a gradient of over-underdevelopment (partially stemming from poor theta x alignment from stage sag), but promising results all the same.",
